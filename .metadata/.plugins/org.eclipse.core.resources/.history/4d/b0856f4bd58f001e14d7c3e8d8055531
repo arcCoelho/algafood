@@ -1,0 +1,31 @@
+package com.coder.wofood.di.notificacao.config;
+
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ConfigurationProperties("notificador.email")
+public class NotificadorProperties {
+
+	private String hostservidor;
+	private String porta;
+	
+	public String getHostservidor() {
+		return hostservidor;
+	}
+	
+	public void setHostservidor(String hostservidor) {
+		this.hostservidor = hostservidor;
+	}
+	
+	public String getPorta() {
+		return porta;
+	}
+	
+	public void setPorta(String porta) {
+		this.porta = porta;
+	}
+	
+	
+	
+}

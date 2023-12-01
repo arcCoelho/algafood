@@ -1,0 +1,14 @@
+package com.coder.wofood.di.notificacao;
+
+import com.coder.wofood.di.modelo.Cliente;
+
+public class NotificadorSMS implements Notificador {
+
+	@Override
+	public void notificar(Cliente cliente, String mensagem) {
+		System.out.printf("Notificando %s por SMS pelo telefone %s mensagem:\n %s", 
+				cliente.getNome(), cliente.getTelefone(), mensagem);
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package com.coder.wofood.di.notificacao.config;
+
+public class NotificadorProperties {
+
+}

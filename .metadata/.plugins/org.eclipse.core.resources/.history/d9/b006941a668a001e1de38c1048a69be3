@@ -1,0 +1,13 @@
+package com.coder.wofood.di.notificacao;
+
+import com.coder.wofood.di.modelo.Cliente;
+
+public class NotificadorSMS implements Notificador {
+
+	@Override
+	public void notificar(Cliente cliente, String mensagem) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

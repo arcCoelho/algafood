@@ -1,0 +1,32 @@
+package com.coder.wofood.di.notificacao;
+
+import com.coder.wofood.di.modelo.Cliente;
+
+public class NotificadorEmailMock implements Notificador {
+
+	private Boolean caixaAlta;
+	private String smtp;
+	
+	
+	public NotificadorEmailMock(String smtp) {
+		System.out.println("NotificadorEmail instanciado");
+		this.smtp = smtp;
+	}
+
+	public void setCaixaAlta(Boolean caixaAlta) {
+		this.caixaAlta = caixaAlta;
+	}
+	
+	public void notificar(Cliente cliente, String mensagem) {
+		System.out.println("chamando metodo notificar !!!! ");
+		System.out.println("");
+		if(caixaAlta) {
+			mensagem = mensagem.toUpperCase();
+		}
+		
+		System.out.printf("notificando %s através do email e smtp %s e %s: %s \n", cliente.getNome(), cliente.getEmail(), this.smtp, mensagem);
+	}
+
+	
+	
+}

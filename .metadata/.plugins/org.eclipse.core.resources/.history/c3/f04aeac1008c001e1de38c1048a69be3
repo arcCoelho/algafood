@@ -1,0 +1,22 @@
+package com.coder.wofood.di.notificacao.config;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.coder.wofood.di.notificacao.NotificadorEmail;
+
+
+@Configuration
+public class NotificadorEmailConfig {
+	
+	@TipoDeNotificacao(TipoEnvio.EMAIL)
+	@Bean
+	public NotificadorEmail notificadorEmail(){
+		NotificadorEmail notificador = new NotificadorEmail("smtp.google.com");
+		notificador.setCaixaAlta(Boolean.TRUE);
+		
+		return notificador;
+	}
+	
+}

@@ -1,0 +1,7 @@
+package com.coder.wofood.di.service;
+
+import org.springframework.context.ApplicationEvent;
+
+public class ClienteAtivadoEvent extends ApplicationEvent {
+
+}

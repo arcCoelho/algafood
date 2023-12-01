@@ -1,0 +1,27 @@
+package com.coder.wofood.di.service;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+import com.coder.wofood.di.modelo.Cliente;
+import com.coder.wofood.di.notificacao.Notificador;
+import com.coder.wofood.di.notificacao.NotificadorEmail;
+
+
+public class AtivacaoClienteService {
+
+	private Notificador notificador;
+	
+	@Qualifier("sms")
+	public AtivacaoClienteService(Notificador notificador) {
+		System.out.println("injetando a bagaça");
+		this.notificador = notificador;
+	}
+
+	public void ativar(Cliente cliente) {
+		cliente.ativar();
+		
+		notificador.notificar(cliente, "cliente notificado da ativação!");
+	}
+	
+}

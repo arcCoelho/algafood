@@ -1,0 +1,19 @@
+package com.coder.wofood.di.service.config;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+import com.coder.wofood.di.notificacao.Notificador;
+import com.coder.wofood.di.service.AtivacaoClienteService;
+
+@Configuration
+public class AtivacaoClienteServiceConfig {
+
+	@Bean
+	public AtivacaoClienteService ativacaoClienteService(@Qualifier("email") Notificador notificador) {
+		AtivacaoClienteService ativacao = new AtivacaoClienteService(notificador);
+		return ativacao;
+	}
+	
+}

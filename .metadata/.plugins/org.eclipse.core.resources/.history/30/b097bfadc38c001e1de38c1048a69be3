@@ -1,0 +1,14 @@
+package com.coder.wofood.di.listner;
+
+import org.springframework.stereotype.Component;
+
+import com.coder.wofood.di.service.ClienteAtivadoEvent;
+
+@Component
+public class NotificacaoService {
+
+	public void clienteAtivadoListner(ClienteAtivadoEvent clienteAtivadoEvent) {
+		
+	}
+	
+}

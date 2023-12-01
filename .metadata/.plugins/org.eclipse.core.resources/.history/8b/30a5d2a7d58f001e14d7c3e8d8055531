@@ -1,0 +1,38 @@
+package com.coder.wofood.di.notificacao;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
+
+import com.coder.wofood.di.modelo.Cliente;
+import com.coder.wofood.di.notificacao.config.NotificadorProperties;
+
+public class NotificadorEmail implements Notificador {
+
+	private Boolean caixaAlta;
+	private String smtp;
+	
+//	@Autowired
+//	private NotificadorProperties properties;
+	
+	public NotificadorEmail(String smtp) {
+		//System.out.println("NotificadorEmail instanciado "+properties.getHostServidor()+" - "+properties.getPortaServidor());
+		this.smtp = smtp;
+	}
+
+	public void setCaixaAlta(Boolean caixaAlta) {
+		this.caixaAlta = caixaAlta;
+	}
+	
+	public void notificar(Cliente cliente, String mensagem) {
+		System.out.println("chamando metodo notificar !!!! ");
+		System.out.println("");
+		if(caixaAlta) {
+			mensagem = mensagem.toUpperCase();
+		}
+		
+		System.out.printf("notificando %s através do email e smtp %s e %s: %s \n", cliente.getNome(), cliente.getEmail(), this.smtp, mensagem);
+	}
+
+	
+	
+}

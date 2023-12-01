@@ -1,0 +1,5 @@
+package com.coder.wofood.di.listner;
+
+public class EmissaoNotafiscalService {
+
+}
